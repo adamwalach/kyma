@@ -78,7 +78,7 @@ func main() {
 
 	// internal services
 	nsBrokerSyncer := syncer.NewServiceBrokerSyncer(scClientSet.ServicecatalogV1beta1())
-	relistRequester := syncer.NewRelistRequester(nsBrokerSyncer, cfg.BrokerRelistDurationWindow, cfg.UniqueSelectorLabelKey, cfg.UniqueSelectorLabelValue, log)
+	relistRequester := syncer.NewRelistRequester(nsBrokerSyncer, cfg.BrokerRelistDurationWindow, log)
 	siFacade := broker.NewServiceInstanceFacade(scInformersGroup.ServiceInstances().Informer())
 	accessChecker := access.New(sFact.RemoteEnvironment(), reClient.ApplicationconnectorV1alpha1(), sFact.Instance())
 

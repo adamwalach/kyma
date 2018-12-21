@@ -18,9 +18,11 @@ import (
 
 const (
 	// NamespacedBrokerName name of the namespaced Service Broker
-	NamespacedBrokerName = "remote-env-broker"
-	brokerLabelKey       = "namespaced-remote-env-broker"
-	brokerLabelValue     = "true"
+	NamespacedBrokerName = "application-broker"
+	// BrokerLabelKey key of the namespaced Service Broker label
+	BrokerLabelKey = "namespaced-application-broker"
+	// BrokerLabelValue value of the namespaced Service Broker label
+	BrokerLabelValue = "true"
 )
 
 //go:generate mockery -name=serviceNameProvider -output=automock -outpkg=automock -case=underscore
@@ -109,7 +111,7 @@ func (f *Facade) Create(destinationNs string) error {
 			Name:      NamespacedBrokerName,
 			Namespace: destinationNs,
 			Labels: map[string]string{
-				brokerLabelKey: brokerLabelValue,
+				BrokerLabelKey: BrokerLabelValue,
 			},
 		},
 		Spec: v1beta1.ServiceBrokerSpec{
