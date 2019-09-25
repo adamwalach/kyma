@@ -81,7 +81,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by(container_name) (container_memory_usage_bytes{pod_name=~\"service-catalog-catalog-crds-controller-manager.*\", container_name!=\"POD\"})",
+          "expr": "sum by(container_name) (container_memory_usage_bytes{pod_name=~\"service-catalog-catalog-controller-manager.*\", container_name!=\"POD\"})",
           "format": "time_series",
           "instant": false,
           "interval": "10s",
@@ -92,7 +92,7 @@
           "step": 15
         },
         {
-          "expr": "kube_pod_container_resource_requests_memory_bytes{pod=~\"service-catalog-catalog-crds-controller-manager.*\"}",
+          "expr": "kube_pod_container_resource_requests_memory_bytes{pod=~\"service-catalog-catalog-controller-manager.*\"}",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 2,
@@ -102,7 +102,7 @@
           "step": 20
         },
         {
-          "expr": "kube_pod_container_resource_limits_memory_bytes{pod=~\"service-catalog-catalog-crds-controller-manager.*\"}",
+          "expr": "kube_pod_container_resource_limits_memory_bytes{pod=~\"service-catalog-catalog-controller-manager.*\"}",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 2,
@@ -186,7 +186,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum(rate(container_network_receive_bytes_total{namespace=\"kyma-system\",pod_name=~\"service-catalog-catalog-crds-controller-manager.*\"}[3m]))",
+          "expr": "sum(rate(container_network_receive_bytes_total{namespace=\"kyma-system\",pod_name=~\"service-catalog-catalog-controller-manager.*\"}[3m]))",
           "format": "time_series",
           "intervalFactor": 1,
           "legendFormat": "",
@@ -283,7 +283,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (container_name)(rate(container_cpu_usage_seconds_total{image!=\"\",container_name!=\"POD\",pod_name=~\"service-catalog-catalog-crds-controller-manager.*\"}[1m]))",
+          "expr": "sum by (container_name)(rate(container_cpu_usage_seconds_total{image!=\"\",container_name!=\"POD\",pod_name=~\"service-catalog-catalog-controller-manager.*\"}[1m]))",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{ container_name }}",
@@ -291,7 +291,7 @@
           "step": 30
         },
         {
-          "expr": "kube_pod_container_resource_requests_cpu_cores{pod=~\"service-catalog-catalog-crds-controller-manager.*\"}",
+          "expr": "kube_pod_container_resource_requests_cpu_cores{pod=~\"service-catalog-catalog-controller-manager.*\"}",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 2,
@@ -301,7 +301,7 @@
           "step": 20
         },
         {
-          "expr": "kube_pod_container_resource_limits_cpu_cores{pod=~\"service-catalog-catalog-crds-controller-manager.*\"}",
+          "expr": "kube_pod_container_resource_limits_cpu_cores{pod=~\"service-catalog-catalog-controller-manager.*\"}",
           "format": "time_series",
           "interval": "10s",
           "intervalFactor": 2,
@@ -622,7 +622,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by(container_name) (container_memory_usage_bytes{pod_name=~\"service-catalog-catalog-crds-webhook.*\", container_name!=\"POD\"})",
+              "expr": "sum by(container_name) (container_memory_usage_bytes{pod_name=~\"service-catalog-catalog-webhook.*\", container_name!=\"POD\"})",
               "format": "time_series",
               "instant": false,
               "interval": "10s",
@@ -633,7 +633,7 @@
               "step": 15
             },
             {
-              "expr": "kube_pod_container_resource_requests_memory_bytes{pod=~\"service-catalog-catalog-crds-webhook.*\"}",
+              "expr": "kube_pod_container_resource_requests_memory_bytes{pod=~\"service-catalog-catalog-webhook.*\"}",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
@@ -643,7 +643,7 @@
               "step": 20
             },
             {
-              "expr": "kube_pod_container_resource_limits_memory_bytes{pod=~\"service-catalog-catalog-crds-webhook.*\"}",
+              "expr": "kube_pod_container_resource_limits_memory_bytes{pod=~\"service-catalog-catalog-webhook.*\"}",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
@@ -727,7 +727,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(container_network_receive_bytes_total{namespace=\"kyma-system\",pod_name=~\"service-catalog-catalog-crds-webhook.*\"}[3m]))",
+              "expr": "sum(rate(container_network_receive_bytes_total{namespace=\"kyma-system\",pod_name=~\"service-catalog-catalog-webhook.*\"}[3m]))",
               "format": "time_series",
               "intervalFactor": 1,
               "legendFormat": "",
@@ -824,7 +824,7 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum by (container_name)(rate(container_cpu_usage_seconds_total{image!=\"\",container_name!=\"POD\",pod_name=~\"service-catalog-catalog-crds-webhook.*\"}[1m]))",
+              "expr": "sum by (container_name)(rate(container_cpu_usage_seconds_total{image!=\"\",container_name!=\"POD\",pod_name=~\"service-catalog-catalog-webhook.*\"}[1m]))",
               "format": "time_series",
               "intervalFactor": 2,
               "legendFormat": "{{ container_name }}",
@@ -832,7 +832,7 @@
               "step": 30
             },
             {
-              "expr": "kube_pod_container_resource_requests_cpu_cores{pod=~\"service-catalog-catalog-crds-webhook.*\"}",
+              "expr": "kube_pod_container_resource_requests_cpu_cores{pod=~\"service-catalog-catalog-webhook.*\"}",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
@@ -842,7 +842,7 @@
               "step": 20
             },
             {
-              "expr": "kube_pod_container_resource_limits_cpu_cores{pod=~\"service-catalog-catalog-crds-webhook.*\"}",
+              "expr": "kube_pod_container_resource_limits_cpu_cores{pod=~\"service-catalog-catalog-webhook.*\"}",
               "format": "time_series",
               "interval": "10s",
               "intervalFactor": 2,
@@ -1007,7 +1007,7 @@
     ]
   },
   "timezone": "",
-  "title": "Service Catalog CRD",
+  "title": "Service Catalog",
   "uid": "t9EmddWWz",
   "version": 5
 }
